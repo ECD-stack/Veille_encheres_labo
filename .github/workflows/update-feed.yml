@@ -1,0 +1,38 @@
+name: Mettre a jour le flux RSS
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # toutes les 6 heures
+  workflow_dispatch: {}      # bouton "Run workflow" manuel dans l'onglet Actions
+
+permissions:
+  contents: write
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dependances
+        run: pip install -r requirements.txt
+
+      - name: Installer le navigateur Playwright (sites en JavaScript)
+        run: playwright install --with-deps chromium
+
+      - name: Lancer le scraper
+        run: python scraper.py
+
+      - name: Publier les changements
+        run: |
+          git config user.name "veille-encheres-bot"
+          git config user.email "actions@github.com"
+          git add feed.xml data/seen.json
+          git diff --cached --quiet || git commit -m "Mise a jour automatique du flux"
+          git push
