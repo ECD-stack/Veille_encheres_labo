@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-feed
+  cancel-in-progress: false
+
 jobs:
   update-feed:
     runs-on: ubuntu-latest
@@ -34,5 +38,20 @@ jobs:
           git config user.name "veille-encheres-bot"
           git config user.email "actions@github.com"
           git add feed.xml data/seen.json
-          git diff --cached --quiet || git commit -m "Mise a jour automatique du flux"
-          git push
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau a publier."
+            exit 0
+          fi
+          git commit -m "Mise a jour automatique du flux"
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "Publie."
+              exit 0
+            fi
+            echo "Push refuse (le depot a change entre-temps), nouvelle tentative apres rebase..."
+            git fetch origin main
+            git rebase origin/main || { echo "Rebase impossible, abandon."; git rebase --abort; exit 1; }
+            sleep $((RANDOM % 5 + 1))
+          done
+          echo "Echec apres plusieurs tentatives."
+          exit 1
