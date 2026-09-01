@@ -33,7 +33,7 @@ sites:
     item_selector: "a.d-flex.fill-height"   # le bloc EST le lien
     title_selector: ".title"
     link_selector: ""                        # vide : le bloc est deja le <a>
-    keywords: ["centrifugeuse", "hotte", "PSM", "Poste Sécurité Microbiologique"]
+    keywords: []
 
   - name: "Dome Auctions - Equipement de laboratoire"
     url: "https://dome-auctions.com/fr/autres-categories-industrielles/equipement-de-laboratoire/"
@@ -42,7 +42,7 @@ sites:
     item_selector: "article.lot-card"
     title_selector: "h3.card-title"
     link_selector: "a.js-view-lot"
-    keywords: ["centrifugeuse", "hotte", "PSM", "Poste Sécurité Microbiologique"]
+    keywords: []
 
   # Modele vierge a dupliquer pour ajouter un nouveau site :
   # - name: "Nom du site"
