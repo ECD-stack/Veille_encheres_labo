@@ -26,25 +26,6 @@
 # ce qu'on repere les selecteurs ensemble si tu ne veux pas le faire a la main.
 
 sites:
-  - name: "LabX - Auctions"
-    url: "https://www.labx.com/auctions"
-    enabled: true
-    js: false        # verifie : le contenu est present dans le HTML initial (rendu serveur)
-    item_selector: ".ae__event__card"
-    title_selector: ".ae__event__title"
-    link_selector: ".ae__event__button"
-    keywords: []
-
-  - name: "GovDeals - Laboratory Equipment"
-    url: "https://www.govdeals.com/en/laboratory-equipment"
-    enabled: true
-    js: true         # verifie : contenu charge en JavaScript (Angular), un navigateur est necessaire
-    wait_selector: ".card-title"
-    item_selector: ".card.card-horizontal"
-    title_selector: ".card-title a"
-    link_selector: ".card-title a"
-    keywords: []
-
   - name: "Interencheres - Materiel medical / laboratoire"
     url: "https://www.interencheres.com/materiels-professionnels/materiel-medical-laboratoire/"
     enabled: true
@@ -52,7 +33,16 @@ sites:
     item_selector: "a.d-flex.fill-height"   # le bloc EST le lien
     title_selector: ".title"
     link_selector: ""                        # vide : le bloc est deja le <a>
-    keywords: []
+    keywords: ["centrifugeuse", "hotte", "PSM", "Poste Sécurité Microbiologique"]
+
+  - name: "Dome Auctions - Equipement de laboratoire"
+    url: "https://dome-auctions.com/fr/autres-categories-industrielles/equipement-de-laboratoire/"
+    enabled: true
+    js: false        # verifie : le contenu est present dans le HTML initial (rendu serveur)
+    item_selector: "article.lot-card"
+    title_selector: "h3.card-title"
+    link_selector: "a.js-view-lot"
+    keywords: ["centrifugeuse", "hotte", "PSM", "Poste Sécurité Microbiologique"]
 
   # Modele vierge a dupliquer pour ajouter un nouveau site :
   # - name: "Nom du site"
