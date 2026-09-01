@@ -1,0 +1,64 @@
+# Configuration des sites a surveiller.
+#
+# Pour chaque site, renseigne :
+#   name           : nom affiche dans le flux (obligatoire)
+#   url            : URL de la page qui liste les encheres (obligatoire)
+#   enabled        : true pour activer ce site, false pour le desactiver sans le supprimer
+#   js             : true si les annonces N'APPARAISSENT PAS quand tu fais clic droit > "Afficher
+#                    le code source de la page" (Ctrl+U) -> le contenu est charge par JavaScript
+#                    et il faut un navigateur pour le lire. false si tu VOIS les titres des
+#                    annonces dans le code source -> scraping simple, plus rapide et plus fiable.
+#   item_selector  : selecteur CSS du bloc qui se repete une fois par annonce
+#   title_selector : selecteur CSS du titre A L'INTERIEUR de ce bloc (vide si le bloc est lui-meme le titre)
+#   link_selector  : selecteur CSS du lien <a> A L'INTERIEUR de ce bloc (vide si le bloc est lui-meme le <a>)
+#   wait_selector  : (uniquement si js: true) un selecteur CSS a attendre avant de lire la page,
+#                    pour laisser le temps au JavaScript de charger les annonces
+#   keywords       : (optionnel) si tu mets une liste de mots-cles, seules les annonces dont le
+#                    titre contient au moins un de ces mots seront gardees dans le flux
+#
+# Voir le protocole (etape 5) pour la methode pas-a-pas de reperage de ces selecteurs
+# avec l'inspecteur du navigateur.
+#
+# Les trois entrees ci-dessous sont des points de depart pour les sites pilotes deja
+# identifies. Leurs selecteurs sont volontairement laisses "a verifier" : ils n'ont pas pu
+# etre testes depuis cet environnement (bloque par la configuration reseau) et DOIVENT etre
+# verifies/ajustes par toi via l'inspecteur avant de passer enabled a true.
+
+sites:
+  - name: "LabX - Auctions"
+    url: "https://www.labx.com/auctions"
+    enabled: false  # passe a true une fois les selecteurs verifies
+    js: false        # a confirmer : verifie via Ctrl+U si les titres apparaissent
+    item_selector: ".auction-listing-item"     # A VERIFIER
+    title_selector: ".auction-listing-item__title"  # A VERIFIER
+    link_selector: "a"                          # A VERIFIER
+    keywords: []
+
+  - name: "GovDeals - Laboratory Equipment"
+    url: "https://www.govdeals.com/en/laboratory-equipment"
+    enabled: false
+    js: true         # confirme : le contenu est charge en JavaScript
+    wait_selector: "[class*='listing']"        # A VERIFIER
+    item_selector: "[class*='listing-card']"   # A VERIFIER
+    title_selector: "[class*='title']"         # A VERIFIER
+    link_selector: "a"                          # A VERIFIER
+    keywords: []
+
+  - name: "Interencheres - Materiel medical / laboratoire"
+    url: "https://www.interencheres.com/materiels-professionnels/materiel-medical-laboratoire/"
+    enabled: false
+    js: false        # a confirmer
+    item_selector: ".lot-item"                 # A VERIFIER
+    title_selector: ".lot-item__title"         # A VERIFIER
+    link_selector: "a"                          # A VERIFIER
+    keywords: []
+
+  # Modele vierge a dupliquer pour ajouter un nouveau site :
+  # - name: "Nom du site"
+  #   url: "https://..."
+  #   enabled: true
+  #   js: false
+  #   item_selector: ""
+  #   title_selector: ""
+  #   link_selector: ""
+  #   keywords: []
