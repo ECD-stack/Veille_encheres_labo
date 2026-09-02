@@ -43,6 +43,32 @@ sites:
     title_selector: "h3.card-title"
     link_selector: "a.js-view-lot"
     keywords: []
+    
+  - name: "LabX - Auctions"
+    url: "https://www.labx.com/auctions"
+    enabled: true
+    js: false        # verifie : le contenu est present dans le HTML initial (rendu serveur)
+    item_selector: ".ae__event__card"
+    title_selector: ".ae__event__title"
+    link_selector: ".ae__event__button"
+    keywords: []
+    
+  - name: "Laboccaz - Equipements de laboratoire"
+    url: "https://app.laboccaz.com/?tab=recherche&subtab=references&type=Mat%C3%A9riels&categorie=%C3%89quipements%20de%20laboratoire"
+    enabled: true
+    js: true               # verifie : application Bubble, contenu charge en JavaScript
+    wait_selector: ".Group.cmhaTd1"
+    item_selector: ".clickable-element.Group.cmhaTc1"
+    title_selector: ".Group.cmhaTd1"
+    no_item_links: true    # MODE DEGRADE : ce site ne fournit aucun lien individuel par annonce
+                            # (application Bubble sans URL par fiche). Le lien du flux pointera
+                            # vers cette page de recherche, pas vers l'annonce precise.
+    keywords: []
+    # Attention : ce site est construit avec un outil (Bubble) qui regenere ses noms de classes
+    # techniques a chaque modification de la page par son editeur. C'est le site le plus fragile
+    # de la liste : si le flux cesse de se remplir pour lui, il faudra refaire l'inspection.
+
+    
 
   # Modele vierge a dupliquer pour ajouter un nouveau site :
   # - name: "Nom du site"
