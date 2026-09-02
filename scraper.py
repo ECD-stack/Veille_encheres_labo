@@ -85,20 +85,38 @@ def fetch_js(url, wait_selector=None, wait_ms=3000):
 
 
 def extract_items(html, base_url, site_cfg):
+    """
+    Extrait les annonces d'une page.
+
+    Mode normal : chaque annonce doit avoir un lien individuel (href) -> celui-ci
+    sert de cle de deduplication et de lien cliquable dans le flux.
+
+    Mode degrade (site_cfg["no_item_links"] = true) : le site ne fournit aucun
+    lien individuel par annonce (application type Bubble sans URL par fiche, par
+    exemple). Dans ce cas on garde uniquement le titre ; le lien du flux pointera
+    vers la page de recherche generale du site, et la deduplication se fait sur
+    le texte du titre plutot que sur un lien.
+    """
     soup = BeautifulSoup(html, "lxml")
     containers = soup.select(site_cfg["item_selector"])
+    no_item_links = site_cfg.get("no_item_links", False)
     items = []
     for c in containers:
         title_el = c.select_one(site_cfg["title_selector"]) if site_cfg.get("title_selector") else c
-        link_el = c.select_one(site_cfg["link_selector"]) if site_cfg.get("link_selector") else c
-
-        title = title_el.get_text(strip=True) if title_el else None
-        href = link_el.get("href") if link_el else None
-
-        if not title or not href:
+        title = title_el.get_text(" ", strip=True) if title_el else None
+        if not title:
             continue
 
-        items.append({"title": title, "link": urljoin(base_url, href)})
+        if no_item_links:
+            link = base_url  # pas de fiche individuelle disponible sur ce site
+        else:
+            link_el = c.select_one(site_cfg["link_selector"]) if site_cfg.get("link_selector") else c
+            href = link_el.get("href") if link_el else None
+            if not href:
+                continue
+            link = urljoin(base_url, href)
+
+        items.append({"title": title, "link": link})
     return items
 
 
@@ -118,12 +136,15 @@ def process_site(site_cfg, seen, now_iso):
     items = extract_items(html, url, site_cfg)
     print(f"[{name}] {len(items)} annonce(s) trouvee(s) sur la page")
 
+    no_item_links = site_cfg.get("no_item_links", False)
     keywords = [k.lower() for k in site_cfg.get("keywords", [])]
     new_entries = []
     for item in items:
         if keywords and not any(k in item["title"].lower() for k in keywords):
             continue
-        key = item["link"]
+        # Mode degrade : pas de lien individuel -> on deduplique sur le titre
+        # (prefixe par le nom du site pour eviter les collisions entre sites).
+        key = f"{name}::{item['title']}" if no_item_links else item["link"]
         if key in seen:
             continue
         seen[key] = {
@@ -131,6 +152,8 @@ def process_site(site_cfg, seen, now_iso):
             "link": item["link"],
             "source": name,
             "first_seen": now_iso,
+            "guid": key,
+            "is_permalink": not no_item_links,
         }
         new_entries.append(seen[key])
     return new_entries
@@ -147,11 +170,13 @@ def build_feed(seen):
             pub_rfc822 = pub_dt.strftime("%a, %d %b %Y %H:%M:%S +0000")
         except ValueError:
             pub_rfc822 = now_rfc822
+        guid = e.get("guid", e["link"])
+        is_permalink = "true" if e.get("is_permalink", True) else "false"
         items_xml.append(
             "    <item>\n"
             f"      <title>{escape(e['title'])}</title>\n"
             f"      <link>{escape(e['link'])}</link>\n"
-            f"      <guid isPermaLink=\"true\">{escape(e['link'])}</guid>\n"
+            f"      <guid isPermaLink=\"{is_permalink}\">{escape(guid)}</guid>\n"
             f"      <description>{escape('Source : ' + e['source'])}</description>\n"
             f"      <pubDate>{pub_rfc822}</pubDate>\n"
             "    </item>"
