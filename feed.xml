@@ -4,7 +4,14 @@
     <title>Veille encheres materiel de laboratoire</title>
     <link>https://TON-COMPTE.github.io/TON-DEPOT/</link>
     <description>Flux agrege des nouvelles annonces d'encheres de materiel de laboratoire</description>
-    <lastBuildDate>Fri, 23 Oct 2026 03:48:03 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 11:19:54 +0000</lastBuildDate>
+    <item>
+      <title>Purificateur automatisé d'acides nucléiques All... ALLSHENG · MagnetaPure 32 Plus A partir de 6000€</title>
+      <link>https://app.laboccaz.com/?tab=recherche&amp;subtab=references&amp;type=Mat%C3%A9riels&amp;categorie=%C3%89quipements%20de%20laboratoire</link>
+      <guid isPermaLink="false">Laboccaz - Equipements de laboratoire::Purificateur automatisé d'acides nucléiques All... ALLSHENG · MagnetaPure 32 Plus A partir de 6000€</guid>
+      <description>Source : Laboccaz - Equipements de laboratoire</description>
+      <pubDate>Fri, 23 Oct 2026 11:19:45 +0000</pubDate>
+    </item>
     <item>
       <title>Générateur hydrogène Claind Brezza H400 Claind · Brezza H400 A partir de 3300€</title>
       <link>https://app.laboccaz.com/?tab=recherche&amp;subtab=references&amp;type=Mat%C3%A9riels&amp;categorie=%C3%89quipements%20de%20laboratoire</link>
@@ -1092,13 +1099,6 @@
       <guid isPermaLink="false">Laboccaz - Equipements de laboratoire::Congélateur de laboratoire Liebherr SFFvh 4001 ... Liebherr · SFFvh 4001 Aucun article disponible actuellement</guid>
       <description>Source : Laboccaz - Equipements de laboratoire</description>
       <pubDate>Wed, 09 Sep 2026 12:16:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>Réfrigérateur de laboratoire Liebherr SRPvg 140... Liebherr · SRPvg 1402 Aucun article disponible actuellement</title>
-      <link>https://app.laboccaz.com/?tab=recherche&amp;subtab=references&amp;type=Mat%C3%A9riels&amp;categorie=%C3%89quipements%20de%20laboratoire</link>
-      <guid isPermaLink="false">Laboccaz - Equipements de laboratoire::Réfrigérateur de laboratoire Liebherr SRPvg 140... Liebherr · SRPvg 1402 Aucun article disponible actuellement</guid>
-      <description>Source : Laboccaz - Equipements de laboratoire</description>
-      <pubDate>Tue, 08 Sep 2026 18:15:31 +0000</pubDate>
     </item>
   </channel>
 </rss>
