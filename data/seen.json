@@ -2294,5 +2294,53 @@
     "first_seen": "2026-10-23T16:39:02.229169+00:00",
     "guid": "https://dome-auctions.com/fr/1115-soap-and-detergent-plant-closure-euroquimica-lagarto/equipement-de-laboratoire/44496-2023-elco-ekevo-74500-gl-elco-gasoil-burner/",
     "is_permalink": true
+  },
+  "https://dome-auctions.com/fr/1111-maurer-tempe-fermeture-dune-charcuterie-industrielle/equipement-de-laboratoire/42134-analyseur-automatise-dimmunoessais-biomerieux-vidas-2019/": {
+    "title": "800 -\n        Analyseur automatisé d'immunoessais BIOMÉRIEUX VIDAS 2019",
+    "link": "https://dome-auctions.com/fr/1111-maurer-tempe-fermeture-dune-charcuterie-industrielle/equipement-de-laboratoire/42134-analyseur-automatise-dimmunoessais-biomerieux-vidas-2019/",
+    "source": "Dome Auctions - Equipement de laboratoire",
+    "first_seen": "2026-10-26T12:26:45.679303+00:00",
+    "guid": "https://dome-auctions.com/fr/1111-maurer-tempe-fermeture-dune-charcuterie-industrielle/equipement-de-laboratoire/42134-analyseur-automatise-dimmunoessais-biomerieux-vidas-2019/",
+    "is_permalink": true
+  },
+  "https://dome-auctions.com/fr/1111-maurer-tempe-fermeture-dune-charcuterie-industrielle/equipement-de-laboratoire/42137-2016-biomerieux-dilumat-expert-dilueur-gravimetrique/": {
+    "title": "803 -\n        2016 BIOMÉRIEUX Dilumat Expert – Dilueur gravimétrique",
+    "link": "https://dome-auctions.com/fr/1111-maurer-tempe-fermeture-dune-charcuterie-industrielle/equipement-de-laboratoire/42137-2016-biomerieux-dilumat-expert-dilueur-gravimetrique/",
+    "source": "Dome Auctions - Equipement de laboratoire",
+    "first_seen": "2026-10-26T12:26:45.679303+00:00",
+    "guid": "https://dome-auctions.com/fr/1111-maurer-tempe-fermeture-dune-charcuterie-industrielle/equipement-de-laboratoire/42137-2016-biomerieux-dilumat-expert-dilueur-gravimetrique/",
+    "is_permalink": true
+  },
+  "Laboccaz - Equipements de laboratoire::Bain-marie Memmert WNB14 Memmert · WNB14 A partir de 500€": {
+    "title": "Bain-marie Memmert WNB14 Memmert · WNB14 A partir de 500€",
+    "link": "https://app.laboccaz.com/?tab=recherche&subtab=references&type=Mat%C3%A9riels&categorie=%C3%89quipements%20de%20laboratoire",
+    "source": "Laboccaz - Equipements de laboratoire",
+    "first_seen": "2026-10-26T12:26:45.679303+00:00",
+    "guid": "Laboccaz - Equipements de laboratoire::Bain-marie Memmert WNB14 Memmert · WNB14 A partir de 500€",
+    "is_permalink": false
+  },
+  "Laboccaz - Equipements de laboratoire::Réfrigérateur laboratoire Liebherr LCV 4010 Liebherr · LCV 4010 A partir de 1700€": {
+    "title": "Réfrigérateur laboratoire Liebherr LCV 4010 Liebherr · LCV 4010 A partir de 1700€",
+    "link": "https://app.laboccaz.com/?tab=recherche&subtab=references&type=Mat%C3%A9riels&categorie=%C3%89quipements%20de%20laboratoire",
+    "source": "Laboccaz - Equipements de laboratoire",
+    "first_seen": "2026-10-26T12:26:45.679303+00:00",
+    "guid": "Laboccaz - Equipements de laboratoire::Réfrigérateur laboratoire Liebherr LCV 4010 Liebherr · LCV 4010 A partir de 1700€",
+    "is_permalink": false
+  },
+  "Laboccaz - Equipements de laboratoire::Incubateur Major Science Genius Dry Bath Major Science · MD-01N A partir de 400€": {
+    "title": "Incubateur Major Science Genius Dry Bath Major Science · MD-01N A partir de 400€",
+    "link": "https://app.laboccaz.com/?tab=recherche&subtab=references&type=Mat%C3%A9riels&categorie=%C3%89quipements%20de%20laboratoire",
+    "source": "Laboccaz - Equipements de laboratoire",
+    "first_seen": "2026-10-26T12:26:45.679303+00:00",
+    "guid": "Laboccaz - Equipements de laboratoire::Incubateur Major Science Genius Dry Bath Major Science · MD-01N A partir de 400€",
+    "is_permalink": false
+  },
+  "Laboccaz - Equipements de laboratoire::Agitateur oscillant VWR Advanced 3750 VWR · 3750 A partir de 400€": {
+    "title": "Agitateur oscillant VWR Advanced 3750 VWR · 3750 A partir de 400€",
+    "link": "https://app.laboccaz.com/?tab=recherche&subtab=references&type=Mat%C3%A9riels&categorie=%C3%89quipements%20de%20laboratoire",
+    "source": "Laboccaz - Equipements de laboratoire",
+    "first_seen": "2026-10-26T12:26:45.679303+00:00",
+    "guid": "Laboccaz - Equipements de laboratoire::Agitateur oscillant VWR Advanced 3750 VWR · 3750 A partir de 400€",
+    "is_permalink": false
   }
 }
