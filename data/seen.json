@@ -3182,5 +3182,13 @@
     "first_seen": "2026-11-20T19:42:52.340749+00:00",
     "guid": "Laboccaz - Equipements de laboratoire::Microscope optique Optika B-290TB Optika · B-290TB A partir de 950€",
     "is_permalink": false
+  },
+  "https://www.labx.com/auctions/michigan-institute-of-toxicology-compliance-lab": {
+    "title": "Michigan Institute of Toxicology & Compliance Lab",
+    "link": "https://www.labx.com/auctions/michigan-institute-of-toxicology-compliance-lab",
+    "source": "LabX - Auctions",
+    "first_seen": "2026-11-21T06:00:50.064636+00:00",
+    "guid": "https://www.labx.com/auctions/michigan-institute-of-toxicology-compliance-lab",
+    "is_permalink": true
   }
 }
